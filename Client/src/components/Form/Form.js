@@ -6,7 +6,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import useStyles from './styles';
 import { createPost, updatePost } from '../../actions/posts';
 
-const Form = ({ currentId, setCurrentID }) => {
+const Form = ({ currentId, setCurrentId }) => {
   const [postData, setPostData] = useState({ creator: '', title: '', message: '', tags: '', selectedFile: '' });
   const post = useSelector((state) => (currentId ? state.posts.find((message) => message.id === currentId) : null));
   const classes = useStyles();
@@ -26,10 +26,10 @@ const Form = ({ currentId, setCurrentID }) => {
 
     if (currentId === 0) {
       dispatch(createPost(postData));
-      clear();
+      Clear();
     } else {
       dispatch(updatePost(currentId, postData));
-      clear();
+      Clear();
     }
   };
 

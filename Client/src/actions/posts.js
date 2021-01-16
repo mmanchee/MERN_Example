@@ -1,4 +1,4 @@
-import { FETCH_ALL, CREATE, DELETE, UPDATE, LIKE} from './actionTypes';
+import { FETCH_ALL, CREATE, DELETE, UPDATE, LIKE } from './actionTypes';
 
 import * as api from '../api/index.js';
 
@@ -23,7 +23,7 @@ export const createPost = (post) => async (dispatch) => {
   }
 };
 
-export const updatedPost = (id, post) => async (dispatch) => {
+export const updatePost = (id, post) => async (dispatch) => {
   try {
     const { data } = await api.updatePost(id, post);
 
