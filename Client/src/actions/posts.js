@@ -14,10 +14,11 @@ export const getPosts = () => async (dispatch) => {
 };
 
 export const createPost = (post) => async (dispatch) => {
-  console.log(post);
+  console.log("create", post);
   try {
+    console.log("api", await api.createPost(post));
     const { data } = await api.createPost(post);
-
+    console.log("data", data);
     dispatch({ type: CREATE, payload: data });
   } catch (error) {
     console.log(error);
@@ -26,8 +27,9 @@ export const createPost = (post) => async (dispatch) => {
 
 export const updatePost = (id, post) => async (dispatch) => {
   try {
+    console.log("api", await api.updatePost(id, post))
     const { data } = await api.updatePost(id, post);
-
+    console.log("data", data);
     dispatch({ type: UPDATE, payload: data});
   } catch (error) {
     console.log(error);

@@ -15,23 +15,23 @@ export const getPosts = async (req, res) => {
   }
 }
 
-export const getPost = async (req, res) => {
-  const { id } = req.params;
+// export const getPost = async (req, res) => {
+//   const { id } = req.params;
 
-  try {
-    const post = await PostMessage.findById(id);
+//   try {
+//     const post = await PostMessage.findById(id);
 
-    res.status(200).json(post);
-  } catch (error) {
-    res.status(404).json({ message: error.message });
-  }
-}
+//     res.status(200).json(post);
+//   } catch (error) {
+//     res.status(404).json({ message: error.message });
+//   }
+// }
 
 export const createPost = async (req, res) => {
-  console.log(res);
-  const { title, message, selectedFile, creator, tags } = res.body;
+  console.log(res.body);
+  const post = res.body;
 
-  const newPostMessage = new PostMessage({ title, message, selectedFile, creator, tags })
+  const newPostMessage = new PostMessage(post)
 
   try {
     await newPostMessage.save();
