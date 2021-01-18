@@ -19,7 +19,5 @@ export default makeStyles((theme) => ({
     mainContainer: {
       flexDirection: "column-reverse"
     }
-  }
-  
-  []
+  },
 }));
