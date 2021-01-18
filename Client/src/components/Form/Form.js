@@ -16,7 +16,7 @@ const Form = ({ currentId, setCurrentId }) => {
     if (post) setPostData(post);
   }, [post]);
   
-  const Clear = () => {
+  const clear = () => {
     setCurrentId(0);
     setPostData({ creator: '', title: '', message: '', tags: '', selectedFile: '' });
   };
@@ -26,10 +26,10 @@ const Form = ({ currentId, setCurrentId }) => {
 
     if (currentId === 0) {
       dispatch(createPost(postData));
-      Clear();
+      clear();
     } else {
       dispatch(updatePost(currentId, postData));
-      Clear();
+      clear();
     }
   };
 
