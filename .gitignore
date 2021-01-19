@@ -1,8 +1,5 @@
 # dependencies
-/Client/node_modules
-/Server/node_modules
-/.pnp
-.pnp.js
+node_modules
 
 # testing
 /coverage
