@@ -4,6 +4,9 @@
 [Mike Manchee](https://github.com/mmanchee)
 
 This project is based on [JavaScript Mastery](https://www.youtube.com/channel/UCmXmlB4-HJytD7wek0Uo97A) YouTube channel.
+[MERN Project](https://www.youtube.com/watch?v=ngc9gnGgUdA&t)
+[GitHub](https://github.com/adrianhajdin/project_mern_memories)
+
 ## Description
 This project uses the MERN stack (MongoDB, Express, React, and Node.js) to build a event posting website. The website allows for a person to CRUD (Create, Read, Update, and Delete) an event. 
 

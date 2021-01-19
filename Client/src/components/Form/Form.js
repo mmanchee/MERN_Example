@@ -23,8 +23,7 @@ const Form = ({ currentId, setCurrentId }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log("CID", currentId)
-    console.log("form", postData);
+    //console.log("postData", postData);
     if (currentId === null) {
       dispatch(createPost(postData));
       clear();
