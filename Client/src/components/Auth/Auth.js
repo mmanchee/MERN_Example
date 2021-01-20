@@ -2,10 +2,10 @@ import React, { useState } from 'react'
 import { Avatar, Paper, Grid, Typography, Button, Container, TextField } from '@material-ui/core';
 // import { useDispatch } from 'react-redux';
 // import { useHistory } from 'react-router-dom';
-// import { GoogleLogin } from 'react-google-login';
+import { GoogleLogin } from 'react-google-login';
 import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 
-// import Icon from './icon';
+import Icon from './Icon';
 // import { signin, signup } from '../../actions/auth';
 // import { Auth } from '../../actions/actionTypes';
 import useStyles from './styles';
@@ -32,6 +32,14 @@ const SignUp = () => {
 
   };
 
+  const googleSuccess = (res) => {
+    console.log(res);
+  }
+
+  const googleFailure = () => {
+    console.log('Google Sign in was unsuccessful. Try again later.')
+  }
+
   return (
     <Container component='main' maxWidth='xs'>
       <Paper className={classes.paper} elevation={3}>
@@ -51,6 +59,15 @@ const SignUp = () => {
             <Input name='password' label='Password' handleChange={handleChange} type={showPassword ? 'text' : 'password'} handleShowPassword={handleShowPassword} />
             { isSignup && <Input name='confirmPassword' label='Repeat Password' handleChange={handleChange} type='password' /> }
           </Grid>
+          <GoogleLogin 
+            clientId='Google Id'
+            render={(renderProps) => (
+              <Button className={classes.googleButton} color='primary' fullWidth onClick={renderProps.onClick} disabled={renderProps.disabled} startIcon={<Icon />} variant='contained'>Google Sign In</Button>
+            )}
+            onSuccess={googleSuccess}
+            onFailure={googleFailure}
+            cookiePolicy='single_host_origin'
+          />
           <Button type='submit' fullWidth variant='contained' color='primary' className={classes.submit}>
             { isSignup ? 'Sign Up' : 'Sign In' }
           </Button>
