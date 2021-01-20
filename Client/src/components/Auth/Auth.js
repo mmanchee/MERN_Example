@@ -12,12 +12,18 @@ import useStyles from './styles';
 import Input from './Input';
 
 const SignUp = () => {
-  const [isSignup, setIsSignup] = useState(false);
+  //const [isSignup, setIsSignup] = useState(false);
   const classes = useStyles();
+
+  const isSignup = true;
 
   const [showPassword, setShowPassword] = useState(false);
 
   const handleShowPassword = () => setShowPassword(!showPassword);
+
+  const switchMode = () => {
+
+  };
 
   const handleSubmit = () => {
 
@@ -49,6 +55,13 @@ const SignUp = () => {
           <Button type='submit' fullWidth variant='contained' color='primary' className={classes.submit}>
             { isSignup ? 'Sign Up' : 'Sign In' }
           </Button>
+          <Grid container justify='flex-end'>
+            <Grid item>
+              <Button onClick={switchMode}>
+                { isSignup ? 'Already have an account? Sign In' : 'Do not have an account? Sign Up' }
+              </Button>
+            </Grid>
+          </Grid>
         </form>
       </Paper>
     </Container>
