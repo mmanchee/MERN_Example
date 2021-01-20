@@ -5,7 +5,6 @@ export default (posts = [], action) => {
     case FETCH_ALL:
       return action.payload;
     case CREATE:
-      console.log("payload", action.payload);
       return [ ...posts, action.payload];
     case UPDATE:
       return posts.map((post) => (post._id === action.payload._id ? action.payload : post));
