@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from 'react';
-import { Container, AppBar, Typography, Grow, Grid } from '@material-ui/core';
+import { Container, Grow, Grid } from '@material-ui/core';
 import { useDispatch } from 'react-redux';
+import { BrowserRouter, Switch, Route } from 'react-router-dom';
 
 import Posts from './components/Posts/Posts';
 import Form from './components/Form/Form';
 import { getPosts } from './actions/posts';
 import useStyles from './styles';
-import memories from './images/memories.png';
+import Navbar from './components/NavBar/NavBar';
 
 const App = () => {
   const [currentId, setCurrentId] = useState(null);
@@ -19,7 +20,7 @@ const App = () => {
 
   return (
     <Container maxWidth="lg">
-      
+      <Navbar />
       <Grow in>
         <Container>
           <Grid className={classes.mainContainer} container justify="space-between" alignItems="stretch" spacing={3}>
