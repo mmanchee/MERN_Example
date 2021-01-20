@@ -12,17 +12,16 @@ import useStyles from './styles';
 import Input from './Input';
 
 const SignUp = () => {
-  //const [isSignup, setIsSignup] = useState(false);
+  const [isSignup, setIsSignup] = useState(false);
   const classes = useStyles();
-
-  const isSignup = true;
 
   const [showPassword, setShowPassword] = useState(false);
 
   const handleShowPassword = () => setShowPassword(!showPassword);
 
   const switchMode = () => {
-
+    setIsSignup((prevIsSingup) => !prevIsSingup);
+    handleShowPassword(false);
   };
 
   const handleSubmit = () => {
