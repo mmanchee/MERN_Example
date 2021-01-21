@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Avatar, Paper, Grid, Typography, Button, Container, TextField } from '@material-ui/core';
+import { Avatar, Paper, Grid, Typography, Button, Container } from '@material-ui/core';
 import { useDispatch } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 import { GoogleLogin } from 'react-google-login';
@@ -10,6 +10,8 @@ import { signin, signup } from '../../actions/auth';
 import { Auth } from '../../actions/actionTypes';
 import useStyles from './styles';
 import Input from './Input';
+
+const initialState = { firstName: '', lastName: '',email: '', password: '', confirmPassword: '' };
 
 const SignUp = () => {
   const [form, setForm] = useState(initialState);
